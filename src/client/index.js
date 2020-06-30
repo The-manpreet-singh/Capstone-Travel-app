@@ -14,3 +14,8 @@ const depart = () => {
 	const date = document.getElementById("departure_date").value;
 	return date;
 };
+
+const returnDate = () => {
+	const date = document.getElementById("return_date").value;
+	return date;
+};
