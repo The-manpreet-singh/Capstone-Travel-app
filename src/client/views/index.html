@@ -22,9 +22,46 @@
 				Travel-app
 			</a>
 		</nav>
-		<h1>hello Manpreet</h1>
-		<div>
-			hello
+
+		<div class="container form-trip">
+			<div>
+				<div class="form-group">
+					<label for="name">Country/City Name</label>
+					<input id="city" type="text" class="form-control" id="name" placeholder="Enter country/city name" />
+				</div>
+
+				<div class="form-group">
+					<label for="start-date">DEPARTURE DATE</label>
+					<input type="date" class="form-control" id="departure_date" aria-describedby="start date" />
+				</div>
+
+				<div class="form-group">
+					<label for="return-date">RETURN DATE</label>
+					<input type="date" class="form-control" id="return_date" aria-describedby="end date" />
+				</div>
+
+				<button type="button" id="save-trips" class="btn btn-primary">Save trip</button>
+				<button type="button" id="trips-delete" class="btn btn-danger">Delete trips</button>
+			</div>
 		</div>
+
+		<div class="container">
+			<div class="row trips-container"></div>
+		</div>
+
+		<footer>copyright2020</footer>
+
+		<script>
+			// Check that service workers are supported
+			if ("serviceWorker" in navigator) {
+				window.addEventListener("load", () => {
+					navigator.serviceWorker.register("/service-worker.js").then((trip) => {
+						console.log("SW registered successfuly: ", trip);
+					});
+				});
+			} else {
+				console.log("Service Working not supported");
+			}
+		</script>
 	</body>
 </html>
