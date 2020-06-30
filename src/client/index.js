@@ -27,6 +27,17 @@ const dateFormat = (date) => {
 	return dateFormat;
 };
 
+const weatherForecastData = (weatherForecast, difference) => {
+	const weather = {
+		temperature: 0,
+		summary: "",
+	};
+
+	weather.temperature = weatherForecast.data[difference].temp;
+	weather.summary = weatherForecast.data[difference].weather.description;
+	return weather;
+};
+
 const data = {};
 
 const saveTrips = async (e) => {
