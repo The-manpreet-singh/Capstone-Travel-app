@@ -1,4 +1,4 @@
-const city = "india";
+//const city = "india";
 const geoData = async function (city) {
 	const dataUrl =
 		"https://secure.geonames.org/" + "searchJSON?formatted=true&q=" + city + "&username=manpreetsingh&style=full";
