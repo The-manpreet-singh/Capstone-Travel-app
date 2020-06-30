@@ -27,6 +27,11 @@ const dateFormat = (date) => {
 	return dateFormat;
 };
 
+const daysRemainForTrip = (startDate, date) => {
+	const difference = new Date(date).getTime() - new Date(startDate).getTime();
+	return Math.ceil(difference / 86400000);
+};
+
 const weatherForecastData = (weatherForecast, difference) => {
 	const weather = {
 		temperature: 0,
