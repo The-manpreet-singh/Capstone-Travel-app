@@ -59,3 +59,6 @@ const saveTrips = async (e) => {
 	console.log(data);
 	recentTrip(data);
 };
+
+//for save trip
+document.getElementById("save-trips").addEventListener("click", saveTrips);
