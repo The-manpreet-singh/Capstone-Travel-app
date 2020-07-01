@@ -26,4 +26,8 @@ app.get("/", function (req, res) {
 	res.sendFile("./dist/index.html");
 });
 
+app.get("/servertesting", function (req, res) {
+	res.status(200).send("ok");
+});
+
 module.exports = app;
