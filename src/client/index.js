@@ -33,17 +33,16 @@ const daysRemainForTrip = (startDate, date) => {
 };
 
 const recentTrip = (tripPlaner) => {
-  
-  const tripDeparture = dateFormat(tripPlaner.start);
-  const tripReturn = dateFormat(tripPlaner.end);
-  const difference = daysRemainForTrip(new Date(), tripPlaner.start);
-  const weather = weatherForecastData(tripPlaner.weatherForecast, difference, tripDeparture);
+	const tripDeparture = dateFormat(tripPlaner.start);
+	const tripReturn = dateFormat(tripPlaner.end);
+	const difference = daysRemainForTrip(new Date(), tripPlaner.start);
+	const weather = weatherForecastData(tripPlaner.weatherForecast, difference, tripDeparture);
 
-  const div = document.createElement('div');
-   div.classList.add('save-trip');
-  document.querySelector('.trips-container').appendChild(div);
+	const div = document.createElement("div");
+	div.classList.add("save-trip");
+	document.querySelector(".trips-container").appendChild(div);
 
-  div.innerHTML = `
+	div.innerHTML = `
    <div class="row">
   <div class="col-sm-6 col-md-8">
       <div class="card">
@@ -53,23 +52,29 @@ const recentTrip = (tripPlaner) => {
                  </div>
                  <div class="col-md-6">
                   <div class="card-body">
-                      <h5 class="card-title">My Trip to: <span style="color:#02b3e4 ">${tripPlaner.city}, ${tripPlaner.country} </span></h5>
+                      <h5 class="card-title">My Trip to: <span style="color:#02b3e4 ">${tripPlaner.city}, ${
+		tripPlaner.country
+	} </span></h5>
                     </div>
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item">Departing: <span style="color:crimson"> ${tripDeparture}</span></li>
                       <li class="list-group-item">Return:<span style="color:crimson"> ${tripReturn}</span></li>
-                      <li class="list-group-item">${tripPlaner.city}, ${tripPlaner.country} trip <span style="color:crimson"> ${daysRemainForTrip(new Date(), tripPlaner.start)}</span> days aways </li>
-                      <li class="list-group-item">Typical Weather temperature is <span style="color:crimson">${weather.temperature}&deg;F</span></li>
-                      <li class="list-group-item">weather forecate:  <span style="color:crimson">${weather.summary}</span> </li>
+                      <li class="list-group-item">${tripPlaner.city}, ${
+		tripPlaner.country
+	} trip <span style="color:crimson"> ${daysRemainForTrip(new Date(), tripPlaner.start)}</span> days aways </li>
+                      <li class="list-group-item">Typical Weather temperature is <span style="color:crimson">${
+												weather.temperature
+											}&deg;F</span></li>
+                      <li class="list-group-item">weather forecate:  <span style="color:crimson">${
+												weather.summary
+											}</span> </li>
                     </ul>
                  </div>
           </div>
         </div>
   </div>
-</div> `
-  ;
-}
-
+</div> `;
+};
 
 const weatherForecastData = (weatherForecast, difference) => {
 	const weather = {
@@ -101,3 +106,14 @@ const saveTrips = async (e) => {
 
 //for save trip
 document.getElementById("save-trips").addEventListener("click", saveTrips);
+
+//for remove trip
+const deleteTrips = (event) => {
+	event.preventDefault();
+	const removeElements = (elms) => elms.forEach((el) => el.remove());
+	// Use like:
+	removeElements(document.querySelectorAll(".save-trip"));
+};
+document.querySelectorAll("#trips-delete").forEach((element) => {
+	element.addEventListener("click", deleteTrips);
+});
