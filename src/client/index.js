@@ -12,13 +12,11 @@ const cityValue = () => {
 
 const depart = () => {
 	const date = document.getElementById("departure_date").value;
-	console.log(date);
 	return date;
 };
 
 const returnDate = () => {
 	const date = document.getElementById("return_date").value;
-	console.log(date);
 	return date;
 };
 
