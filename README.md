@@ -1,6 +1,8 @@
 # Travel App Project
 
-## rules: project rubic (https://review.udacity.com/#!/rubrics/2669/view)
+## Live Url- https://capstone-travel-by-manpreet.netlify.app/
+
+## Rules: project rubic (https://review.udacity.com/#!/rubrics/2669/view)
 
 # overview
 
