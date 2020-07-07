@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/><meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/><link rel="shortcut icon" href="#"/><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/><script src="https://maps.googleapis.com/maps/api/js?region=GB"></script><title>Travel-App</title><link href="main.css" rel="stylesheet"></head><body><nav class="navbar" style="background-color: currentcolor;"><a class="navbar-brand" href="#">Travel-app</a></nav><div class="container form-trip"><div><div class="form-group"><label for="name">Country/City Name</label> <input id="city" class="form-control" id="name" placeholder="Enter country/city name"/></div><div class="form-group"><label for="start-date">DEPARTURE DATE</label> <input type="date" class="form-control" id="departure_date" aria-describedby="start date"/></div><div class="form-group"><label for="return-date">RETURN DATE</label> <input type="date" class="form-control" id="return_date" aria-describedby="end date"/></div><button type="button" id="save-trips" class="btn btn-primary">Save trip</button> <button type="button" id="trips-delete" class="btn btn-danger">Delete trips</button></div></div><div class="container"><div class="row trips-container"></div></div><script>// Check that service workers are supported
+			if ("serviceWorker" in navigator) {
+				window.addEventListener("load", () => {
+					navigator.serviceWorker.register("/service-worker.js").then((trip) => {
+						console.log("SW registered successfuly: ", trip);
+					});
+				});
+			} else {
+				console.log("Service Working not supported");
+			}</script><script src="main.js"></script></body></html>
