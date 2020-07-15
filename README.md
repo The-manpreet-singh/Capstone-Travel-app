@@ -1,4 +1,4 @@
-# Travel App Project
+# Udacity-Travel App Project
 
 ## Live Url- https://capstone-travel-by-manpreet.netlify.app/
 
@@ -7,6 +7,7 @@
 # overview
 
 In this project we plan the trip and save, delete the trip, we also check how many days left, weatherforecast, temp for the trip. We fetch data from 4 apis to display the trip which are dependant on each other.
+
 This project that excercised my ability to navigate through the module bundler, 'Webpack'. The result of which is a weather app and express/ node.js driven application.
 
 # 4 Apis used
