@@ -1,4 +1,4 @@
-# Udacity-Travel App Project
+# Udacity- Capstone Travel App Project
 
 ## Live Url- https://capstone-travel-by-manpreet.netlify.app/
 
